@@ -8,9 +8,12 @@ function postMessage(req, res) {
 }
 
 function getMessages (req, res) {
-    // res.send('<ul><li>Hello Sir Isaac!</li></ul>')
     const imagePath = path.join(__dirname, '..', 'public', 'images', 'skimountain.jpg')
-    res.sendFile(imagePath)
+    res.render('messages', {
+        title: 'messages to my friend',
+        friend: 'Elon Musk'
+    })
+    // res.sendFile(imagePath)
 }
 
 export { postMessage, getMessages }

@@ -1,0 +1,36 @@
+Server.js
+- Creates the Server (const app = express())
+- sets the view engine ( app.set('view engine', 'hbs'))
+- sets the view folder
+- sets the listening PORT
+- common middleware (like json())
+- Initiates the server (app.listen())
+- Stablish the routes
+
+
+Models folder
+- Where data will be define
+- TODO: Will methods to manipulate the data be defined here?
+
+
+Controllers folder
+- Where each API endpoint is defined
+
+
+Routes folder
+- group controllers of the same directory so they be behave as an independent app (and, for example, make use of middleware)
+
+
+Views
+- Where the views, that will be "reder"(ed) are defined.
+- Can  make use of templating language like handlebars, pug, etc.
+
+
+Public
+- Static files accesible from outside the server.
+- It's route (url) is defined in server.js (app.use('/site', express.static()))
+
+Usually, we don't do it this way, because we tend to separate the front end from the backend (and here they are mixed) respeting the "separation of concerns" principle.
+But this is how it used to work.
+
+TODO Review whole lesson and create notes.
