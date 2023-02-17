@@ -1,0 +1,20 @@
+REST = REpresentational Stateless Transfer
+
+Requirements:
+
+- User existing standards: http, json, url
+- Endpoints are collections of data
+- Use GET, POST, PUT, DELETE to communicate the actions we are performing
+- Client - server architecture
+- Request are stateless (each request is separate and not connected to any state on the client not included in the request - the body is not keeping track of the past) 
+  ...and cacheable (saving the result for future use - our request will know if nothing has changed)
+
+
+What RESTful APIs don't do:
+
+- They don't accept remote procedure calls (they are REpresentational, their urls are collections of data, not functions)
+- They don't save information about past request of a given client (stateless)
+
+
+reference:
+- https://www.restapitutorial.com/lessons/httpmethods.html

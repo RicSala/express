@@ -1,8 +1,12 @@
-import express, { json, Router } from 'express'
+import express, { json } from 'express'
 import friendsRouter from './routes/friends.router.js';
 import messagesRouter from './routes/messages.router.js';
+import path from 'path';
+import url from 'url';
 
 // Express API reference: https://expressjs.com/en/api.html
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 
 const app = express()
@@ -15,8 +19,10 @@ app.use((req, res, next) => {
     console.log(`${req.method} - ${req.baseUrl}${req.url} ${Date.now() - start} ms`)
 })
 
-app.use(json())
 
+app.use('/site', express.static(path.join(__dirname, 'public')))
+
+app.use(json())
 
 app.use('/friends', friendsRouter)
 
